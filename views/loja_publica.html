@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Time - Vitrine de Relógios</title>
+    <link rel="stylesheet" href="/static/css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>LEGACY TIME - VITRINE VIRTUAL</h1>
+        <p class="subtitle">Conheça nossos modelos exclusivos</p>
+        <div style="margin-top: 15px;">
+            <a href="/login" class="btn-add" style="text-decoration: none; padding: 8px 15px;">🔒 Área do Administrador</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Modelos Disponíveis</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ícone</th>
+                    <th>Nome do Relógio</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                % for r in relogios:
+                <tr>
+                    <td style="font-size: 24px;">{{r['icone']}}</td>
+                    <td style="font-weight: bold;">{{r['nome']}}</td>
+                    <td class="preco-tag">R$ {{r['preco']}}</td>
+                </tr>
+                % end
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

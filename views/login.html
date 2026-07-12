@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Time - Login Administrativo</title>
+    <link rel="stylesheet" href="/static/css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>LEGACY TIME - CONTROLE DE ACESSO</h1>
+        <p class="subtitle">Identifique-se para gerenciar o estoque</p>
+    </header>
+
+    <div class="container" style="max-width: 450px; margin: 40px auto; padding: 30px;">
+        <h2 style="color: #ffcc00; text-align: center; margin-bottom: 20px;">Painel de Autenticação</h2>
+        
+        <!-- Mensagem caso o usuário erre a senha -->
+        % if erro:
+            <p style="color: #ff4d4d; text-align: center; font-weight: bold; margin-bottom: 15px;">⚠️ {{erro}}</p>
+        % end
+
+        <form action="/login" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+            <div>
+                <label style="color: #fff; display: block; margin-bottom: 5px;">Usuário:</label>
+                <input type="text" name="username" placeholder="Digite 'admin'" required style="width: 100%; box-sizing: border-box;">
+            </div>
+            
+            <div>
+                <label style="color: #fff; display: block; margin-bottom: 5px;">Senha:</label>
+                <input type="password" name="password" placeholder="Digite '1234'" required style="width: 100%; box-sizing: border-box;">
+            </div>
+
+            <button type="submit" class="btn-add" style="width: 100%; margin-top: 10px; padding: 12px;">Entrar no Sistema</button>
+        </form>
+
+        <p style="text-align: center; margin-top: 20px;">
+            <a href="/" style="color: #aaa; text-decoration: none; font-size: 14px;">← Voltar para a Vitrine Pública</a>
+        </p>
+    </div>
+</body>
+</html>
